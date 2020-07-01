@@ -14,22 +14,31 @@ document.addEventListener("scroll", () => {
 
 const navbarMenu = document.querySelector(".navbar__menu");
 
-navbarMenu.addEventListener('click', (event) => {
+navbarMenu.addEventListener("click", (event) => {
     const target = event.target;
     const link = target.dataset.link;
-    if(link == null){
+    if (link == null) {
         return;
     }
     const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior : "smooth"});
+    scrollTo.scrollIntoView({ behavior: "smooth" });
 });
 
 // Handle click on "contact me" button on home
 
 const homeDescription = document.querySelector(".home__contact");
 
-homeDescription.addEventListener('click', (event) => {
+homeDescription.addEventListener("click", (event) => {
     const link = event.target.dataset.link;
     const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior : "smooth"});
-})
+    scrollTo.scrollIntoView({ behavior: "smooth" });
+});
+
+// Make home slowly fade to transparent as the window scrolls down
+
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
+
+document.addEventListener("scroll", () => {
+    home.style.opacity = 1 - window.scrollY / homeHeight;
+});
