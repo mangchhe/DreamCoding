@@ -143,8 +143,9 @@ button {
 
 .navbar__toggle-btn {
     position: absolute;
-    right: 32px;
-    font-size: 24px;
+    top: 10px;
+    right: 10px;
+    font-size: var(--font-medium);
     color: var(--color-white);
     display: none;
 }
@@ -326,6 +327,7 @@ button {
     border-radius: var(--size-border-radius);
     font-size: var(--font-regular);
     padding: 8px 48px;
+    position: relative;
 }
 
 .category__btn.selected,
@@ -348,9 +350,9 @@ button {
     width: 24px;
     display: inline-block;
     line-height: 24px;
-    position: relative;
+    position: absolute;
     top: -20px;
-    left: 4px;
+    right: 16px;
     opacity: 0;
     transition: all var(--animation-duration) ease-in;
 }
@@ -541,6 +543,7 @@ button {
 
     .section {
         padding: 16px;
+        padding-top: 40px;
     }
 
     .about__majors {
@@ -558,15 +561,40 @@ button {
     }
 
     .category__btn {
-        padding: 8px;
+        padding: 4px 0;
+        width: 100%;
     }
 
     .project {
         flex-grow: 1;
     }
 
+    .testimonial {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .testimonial__avatar {
         width: 80px;
         height: 80px;
+    }
+
+    .testimonial__avatar:nth-child(even),
+    .testimonial__avatar:nth-child(odd) {
+        margin: 0;
+        margin-bottom: 8px;
+    }
+
+    .testimonial__speech-bubble {
+        order: 1;
+    }
+
+    .arrow-up {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        line-height: 50px;
+        right: 16px;
+        bottom: 16px;
     }
 }
